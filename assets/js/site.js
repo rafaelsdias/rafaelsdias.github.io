@@ -101,7 +101,7 @@
       i = (k + lista.length) % lista.length; const it = lista[i];
       img.src = it.src; img.alt = it.alt || '';
       // nunca amplia além do tamanho real do arquivo
-      img.style.maxWidth = `min(100%, ${it.w}px)`; img.style.maxHeight = `min(100%, ${it.h}px)`;
+      img.style.maxWidth = `min(calc(100% - 2 * var(--gutter)), ${it.w}px)`; img.style.maxHeight = `min(100%, ${it.h}px)`;
       cont.textContent = lista.length > 1 ? `${nn(i + 1)} / ${nn(lista.length)}` : '';
       leg.textContent = it.legenda || '';
       $$('[data-a],[data-p]', el).forEach(b => b.hidden = lista.length < 2);

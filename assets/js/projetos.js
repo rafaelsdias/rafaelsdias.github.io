@@ -9,7 +9,7 @@ window.CONTATO = {
   behance: 'https://be.net/diasrafael',
   linkedin: 'https://www.linkedin.com/in/rafaeldias-designer/',
   cidade: 'Santo André · SP',
-  curriculo: '' // caminho do PDF quando estiver pronto, ex.: 'assets/cv/rafael-dias-curriculo.pdf'
+  curriculo: 'assets/cv/rafael-dias-curriculo.pdf' // gerado por tools/gerar-curriculo.sh
 };
 
 window.CATEGORIAS = [
@@ -50,7 +50,7 @@ window.PROJETOS = [
     id: 'a-casa-ink',
     titulo: 'A Casa Ink', destaque: 'Marca e redes sociais',
     resumo: 'Brandbook e templates de carrossel para um estúdio de tatuagem em São Paulo.',
-    cat: 'branding', cats: ['branding', 'social'], ano: '', cliente: 'A Casa Ink · Tattoo Studio',
+    cat: 'branding', cats: ['branding', 'social'], ano: '2025', cliente: 'A Casa Ink · Tattoo Studio',
     papel: 'Identidade visual, brandbook e templates para Instagram',
     entregas: ['Logotipo e versões', 'Tipografia Raleway e Unna', 'Paleta CMYK', 'Papelaria e embalagens', 'Vestuário', 'Templates de carrossel'],
     capa: { src: 'casa-ink/manual/04' },
@@ -100,7 +100,7 @@ window.PROJETOS = [
     id: 'master-social',
     titulo: 'Master Corretora', destaque: 'Social media',
     resumo: 'Posts e carrosséis de Instagram, do lançamento da corretora ao conteúdo para traders.',
-    cat: 'social', ano: '', cliente: 'Master Corretora',
+    cat: 'social', ano: '2023–2025', cliente: 'Master Corretora',
     papel: 'Criação de peças para redes sociais',
     entregas: ['Lançamento da marca', 'Carrosséis educativos', 'Produto e plataforma', 'Datas comemorativas'],
     capa: { src: 'instagram/30/01' },
@@ -110,8 +110,8 @@ window.PROJETOS = [
   {
     id: 'thumbnails-youtube',
     titulo: 'Thumbnails', destaque: 'YouTube',
-    resumo: 'Thumbnails para canais de mercado financeiro no YouTube, como o Giro da CM.',
-    cat: 'youtube', ano: '', cliente: 'Canais de mercado financeiro',
+    resumo: 'Thumbnails para os canais da CM Capital no YouTube, como o Giro da CM.',
+    cat: 'youtube', ano: '2019–2023', cliente: 'CM Capital Markets',
     papel: 'Criação e manipulação de imagem',
     entregas: ['Thumbnails de notícias', 'Séries e programas ao vivo', 'Conteúdo educativo'],
     capa: { src: 'youtube/35' },
@@ -136,7 +136,7 @@ window.PROJETOS = [
     id: 'master-video',
     titulo: 'Master Corretora', destaque: 'Vídeo',
     resumo: 'Vídeo hero institucional e vinheta do Morning Call.',
-    cat: 'video', ano: '', cliente: 'Master Corretora',
+    cat: 'video', ano: '2023–2025', cliente: 'Master Corretora',
     papel: 'Edição, motion graphics e finalização',
     entregas: ['Vídeo hero institucional', 'Vinheta Morning Call'],
     capa: { src: 'video-hero-master', video: true, w: 1280, h: 720 },
@@ -149,8 +149,8 @@ window.PROJETOS = [
   {
     id: 'eplus-day',
     titulo: 'e-Plus Day', destaque: 'Same day edit',
-    resumo: 'Vídeo editado no mesmo dia do evento, na Bolsa de Valores de São Paulo.',
-    cat: 'video', ano: '', cliente: 'e-Plus Day · B3',
+    resumo: 'Vídeo editado no mesmo dia do e-Plus Day, evento da CM Capital na Bolsa de Valores de São Paulo.',
+    cat: 'video', ano: '2019–2023', cliente: 'CM Capital Markets · evento na B3',
     papel: 'Captação e edição no mesmo dia',
     entregas: ['Same day edit'],
     capa: { src: 'same-day-edit-eplus-day', video: true, w: 1280, h: 720 },
