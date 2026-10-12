@@ -291,15 +291,62 @@
   }
 
   /* ---------- SOBRE ---------- */
+  // Foto em camadas: cada camada se desloca conforme data-prof (px), seguindo o mouse,
+  // a inclinação do celular (sensor de movimento) ou, sem sensor, a rolagem da página.
   function sobre() {
     const r = $('.retrato'); if (!r || reduzMovimento) return;
-    const camadas = $$('.camada', r);
-    const move = (dx, dy) => camadas.forEach(c => { const f = +c.dataset.prof; c.style.transform = `translate3d(${dx * f}px,${dy * f}px,0)`; });
-    r.closest('section').addEventListener('mousemove', e => {
-      const b = r.getBoundingClientRect(); move((e.clientX - b.left - b.width / 2) / b.width * 2, (e.clientY - b.top - b.height / 2) / b.height * 2);
+    const camadas = $$('.camada', r), secao = r.closest('section');
+    const toque = matchMedia('(hover: none)').matches;
+    const lim = (v) => Math.max(-1, Math.min(1, v));
+    let alvo = { x: 0, y: 0 }, atual = { x: 0, y: 0 }, sensorAtivo = false;
+
+    // movimento suavizado: as camadas seguem o alvo com atraso, sem tremer
+    (function anima() {
+      atual.x += (alvo.x - atual.x) * .08; atual.y += (alvo.y - atual.y) * .08;
+      const ganho = toque ? 1.4 : 1;
+      camadas.forEach(c => { const f = +c.dataset.prof * ganho; c.style.transform = `translate3d(${(atual.x * f).toFixed(2)}px,${(atual.y * f).toFixed(2)}px,0)`; });
+      requestAnimationFrame(anima);
+    })();
+    camadas.forEach(c => c.style.transition = 'none');
+
+    secao.addEventListener('mousemove', e => {
+      const b = r.getBoundingClientRect();
+      alvo = { x: lim((e.clientX - b.left - b.width / 2) / b.width * 2), y: lim((e.clientY - b.top - b.height / 2) / b.height * 2) };
     });
-    r.closest('section').addEventListener('mouseleave', () => move(0, 0));
-    addEventListener('scroll', () => { const b = r.getBoundingClientRect(); const t = (b.top + b.height / 2 - innerHeight / 2) / innerHeight; if (matchMedia('(hover: none)').matches) move(0, t * 2); }, { passive: true });
+    secao.addEventListener('mouseleave', () => alvo = { x: 0, y: 0 });
+
+    // sem sensor: a rolagem move as camadas na vertical
+    addEventListener('scroll', () => {
+      if (!toque || sensorAtivo) return;
+      const b = r.getBoundingClientRect(); alvo = { x: 0, y: lim((b.top + b.height / 2 - innerHeight / 2) / innerHeight * 2) };
+    }, { passive: true });
+
+    if (!toque || !('DeviceOrientationEvent' in window)) return;
+
+    // a posição em que a pessoa segura o celular é o centro; o centro acompanha devagar mudanças de postura
+    let base = null;
+    function orientacao(e) {
+      if (e.beta == null || e.gamma == null) return;
+      const ang = (screen.orientation && screen.orientation.angle) || window.orientation || 0;
+      let x = e.gamma, y = e.beta;
+      if (ang === 90) { x = e.beta; y = -e.gamma; } else if (ang === -90 || ang === 270) { x = -e.beta; y = e.gamma; }
+      if (!base) base = { x, y };
+      base.x += (x - base.x) * .01; base.y += (y - base.y) * .01;
+      sensorAtivo = true;
+      alvo = { x: lim((x - base.x) / 18), y: lim((y - base.y) / 18) };
+    }
+    addEventListener('deviceorientation', orientacao); // Android: já recebe os dados aqui
+
+    // iPhone: nenhum dado chega até o visitante tocar e autorizar; só então mostra o convite
+    setTimeout(() => {
+      if (sensorAtivo || typeof DeviceOrientationEvent.requestPermission !== 'function') return;
+      const b = h(`<button class="sensor" type="button">Toque para mover com o celular</button>`);
+      r.append(b);
+      b.addEventListener('click', async () => {
+        try { await DeviceOrientationEvent.requestPermission(); } catch { }
+        b.remove();
+      });
+    }, 900);
   }
 
   /* ---------- início ---------- */

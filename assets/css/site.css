@@ -240,7 +240,8 @@ button{font:inherit;color:inherit}
 .retrato .tras{z-index:1;opacity:.95;animation:deriva-a 18s ease-in-out infinite alternate}
 .retrato .rosto{z-index:2}
 .retrato .frente{z-index:3;mix-blend-mode:screen;opacity:.92;animation:deriva-b 14s ease-in-out infinite alternate}
-.retrato .camada{position:absolute;inset:0;transition:transform .9s var(--ease)}
+.retrato .camada{position:absolute;inset:0;transition:transform .9s var(--ease);will-change:transform}
+.sensor{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);z-index:6;border:1px solid rgba(238,238,238,.55);background:rgba(28,28,28,.55);color:#eee;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:40px;padding:8px 16px;font-size:12px;letter-spacing:.02em;cursor:pointer;white-space:nowrap}
 @keyframes deriva-a{from{transform:translate3d(-2.5%,1%,0) scale(1.02)}to{transform:translate3d(3%,-1.5%,0) scale(1.05)}}
 @keyframes deriva-b{from{transform:translate3d(3%,-.5%,0)}to{transform:translate3d(-3%,1%,0)}}
 .sobre-texto p{margin:0 0 16px;max-width:58ch;color:var(--muted)}
