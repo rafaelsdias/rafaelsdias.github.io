@@ -48,7 +48,7 @@
         ${link('trabalhos.html', 'Trabalhos', 'trabalhos')}
         ${link('sobre.html', 'Sobre', 'sobre')}
         ${link('#contato', 'Contato', 'contato', 'opc')}
-        ${C.curriculo ? `<li><a class="cv" href="${C.curriculo}" download>Currículo</a></li>` : ''}
+        ${C.curriculo ? `<li><a class="cv" href="${C.curriculo}" target="_blank" rel="noopener">Currículo</a></li>` : ''}
       </ul></nav></div></header>`);
     document.body.prepend(el);
     const solid = () => el.classList.toggle('solid', scrollY > 30);
@@ -65,7 +65,7 @@
           <div><dt>E-mail</dt><dd><a href="mailto:${C.email}">${C.email}</a></dd><button class="copiar" type="button" data-copiar="${C.email}">Copiar e-mail</button></div>
           <div><dt>WhatsApp</dt><dd><a href="${C.whatsapp}" target="_blank" rel="noopener">${C.telefone}</a></dd></div>
           <div><dt>Redes</dt><dd><a href="${C.behance}" target="_blank" rel="noopener">Behance</a> &nbsp; <a href="${C.linkedin}" target="_blank" rel="noopener">LinkedIn</a></dd></div>
-          <div><dt>Base</dt><dd>${C.cidade}</dd>${C.curriculo ? `<dd><a href="${C.curriculo}" download>Baixar currículo (PDF)</a></dd>` : ''}</div>
+          <div><dt>Base</dt><dd>${C.cidade}</dd>${C.curriculo ? `<dd><a href="${C.curriculo}" target="_blank" rel="noopener">Ver currículo (PDF)</a></dd>` : ''}</div>
         </dl>
         <div class="rodape"><span>© ${new Date().getFullYear()} Rafael Dias · Design gráfico e audiovisual</span><a href="#" onclick="scrollTo({top:0});return false">Voltar ao topo ↑</a></div>
       </div></footer>`);

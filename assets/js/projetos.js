@@ -32,7 +32,7 @@ window.PROJETOS = [
     id: 'bluebank',
     titulo: 'BlueBank', destaque: 'Identidade visual',
     resumo: 'Identidade visual e manual de marca para um banco digital.',
-    cat: 'branding', ano: '2023–2025', cliente: 'BlueBank',
+    cat: 'branding', ano: '2025', cliente: 'BlueBank',
     papel: 'Designer responsável da equipe (Analista de Design Gráfico Sênior)',
     entregas: ['Logotipo e símbolo', 'Paleta e tipografia', 'Grid e direção de fotografia', 'App e social', 'Papelaria e brindes', 'Mídia exterior'],
     capa: { src: 'bluebank/manual/21' },
