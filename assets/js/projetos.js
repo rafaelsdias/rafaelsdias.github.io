@@ -14,7 +14,7 @@ window.CONTATO = {
 
 window.CATEGORIAS = [
   ['branding', 'Branding'],
-  ['social', 'Social media'],
+  ['social', 'Design para redes sociais'],
   ['youtube', 'YouTube'],
   ['video', 'Vídeo'],
   ['foto', 'Fotografia'],
@@ -87,7 +87,7 @@ window.PROJETOS = [
   },
   {
     id: 'cm-capital-social',
-    titulo: 'CM Capital', destaque: 'Social media',
+    titulo: 'CM Capital', destaque: 'Design para redes sociais',
     resumo: 'Posts e carrosséis de Instagram para uma corretora de investimentos.',
     cat: 'social', ano: '2019–2023', cliente: 'CM Capital Markets',
     papel: 'Criação de peças para redes sociais (Analista de Design Gráfico Pleno II)',
@@ -98,7 +98,7 @@ window.PROJETOS = [
   },
   {
     id: 'master-social',
-    titulo: 'Master Corretora', destaque: 'Social media',
+    titulo: 'Master Corretora', destaque: 'Design para redes sociais',
     resumo: 'Posts e carrosséis de Instagram, do lançamento da corretora ao conteúdo para traders.',
     cat: 'social', ano: '2023–2025', cliente: 'Master Corretora',
     papel: 'Criação de peças para redes sociais',
