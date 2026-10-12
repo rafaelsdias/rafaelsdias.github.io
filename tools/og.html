@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Imagem de compartilhamento</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;800;900&display=swap">
+<!-- Gera assets/img/og.jpg (1200x630) com tools/gerar-og.sh.
+     Conteúdo essencial centralizado: o WhatsApp às vezes corta um quadrado do meio. -->
+<style>
+*{box-sizing:border-box;margin:0}
+html,body{width:1200px;height:630px;overflow:hidden}
+body{position:relative;font-family:'Poppins',sans-serif;color:#eeeeee;
+  background:linear-gradient(150deg,#5e5e5e 0%,#2a2a2a 38%,#1c1c1c 62%,#121212 100%)}
+.luz{position:absolute;border-radius:50%;filter:blur(110px)}
+.l1{width:900px;height:260px;left:-260px;top:110px;background:#c4c4c4;opacity:.28;transform:rotate(-24deg)}
+.l2{width:700px;height:220px;right:-260px;bottom:-60px;background:#5e5e5e;opacity:.55;transform:rotate(-28deg)}
+.grain{position:absolute;inset:0;opacity:.22;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+/* monograma gigante, gravado no fundo */
+.fantasma{position:absolute;left:50%;top:50%;transform:translate(-50%,-52%);font-size:820px;line-height:1;letter-spacing:-.06em;white-space:nowrap;color:#fff;opacity:.045;mix-blend-mode:screen}
+.fantasma span{font-weight:200}.fantasma b{font-weight:900}
+.centro{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;text-align:center}
+.selo{width:150px;height:150px;border-radius:30px;background:#1c1c1c;border:1.5px solid rgba(238,238,238,.22);display:grid;place-items:center;
+  box-shadow:0 30px 60px -20px rgba(0,0,0,.75), inset 0 1px 0 rgba(255,255,255,.06)}
+.selo div{font-size:76px;line-height:1;letter-spacing:-.04em;margin-top:-6px}
+.selo span{font-weight:300}.selo b{font-weight:800}
+h1{font-size:74px;line-height:1;letter-spacing:-.035em;font-weight:200}
+h1 b{font-weight:900}
+.sub{font-size:21px;font-weight:300;letter-spacing:.01em;color:#c4c4c4;margin-top:-10px}
+.rodape{position:absolute;left:56px;right:56px;bottom:40px;display:flex;justify-content:space-between;font-size:14px;letter-spacing:.22em;text-transform:uppercase;color:#a9a9a9;font-weight:500}
+.topo{position:absolute;left:56px;right:56px;top:40px;display:flex;justify-content:space-between;font-size:14px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a8a;font-weight:500}
+</style>
+</head>
+<body>
+  <div class="luz l1"></div><div class="luz l2"></div>
+  <div class="fantasma"><span>r</span><b>d</b></div>
+  <div class="grain"></div>
+  <div class="topo"><span>Portfólio</span><span>15+ anos</span></div>
+  <div class="centro">
+    <div class="selo"><div><span>r</span><b>d</b></div></div>
+    <h1>Rafael <b>Dias</b></h1>
+    <p class="sub">Design, imagem e movimento</p>
+  </div>
+  <div class="rodape"><span>Branding · Fotografia · Vídeo · Web</span><span>rafaelsdias.github.io</span></div>
+</body>
+</html>
