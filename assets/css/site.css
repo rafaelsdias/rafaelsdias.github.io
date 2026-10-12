@@ -76,9 +76,14 @@ button{font:inherit;color:inherit}
 .indice li a .t b{font-weight:700}
 .indice li a .c{font-size:11px;letter-spacing:.18em;text-transform:uppercase}
 .indice li a .y{font-size:12px;font-variant-numeric:tabular-nums;min-width:74px;text-align:right}
-.indice li a:hover,.indice li a:focus-visible,.indice li a.ativo{color:var(--fg);padding-left:14px}
-.indice li a:hover .t,.indice li a:focus-visible .t,.indice li a.ativo .t{opacity:1}
-.indice:has(a:hover) li a:not(:hover) .t{opacity:.35}
+.indice li a:focus-visible{color:var(--fg);padding-left:14px}
+.indice li a:focus-visible .t{opacity:1}
+/* efeitos de passar o mouse só onde existe mouse: no celular o toque abre o projeto direto */
+@media (hover:hover){
+  .indice li a:hover{color:var(--fg);padding-left:14px}
+  .indice li a:hover .t{opacity:1}
+  .indice:has(a:hover) li a:not(:hover) .t{opacity:.35}
+}
 @media (max-width:760px){
   .indice li a{grid-template-columns:34px minmax(0,1fr);gap:4px 12px;padding:14px 0}
   .indice li a .c{grid-column:2;font-size:10px}
@@ -88,12 +93,6 @@ button{font:inherit;color:inherit}
 .previa.on{opacity:1}
 .previa img{width:100%;height:100%;object-fit:cover}
 @media (hover:none),(max-width:760px){.previa{display:none}}
-.indice li .mini{display:none}
-@media (hover:none),(max-width:760px){
-  .indice li .mini{display:block;grid-column:1/-1;margin-top:10px;max-height:0;overflow:hidden;transition:max-height .5s var(--ease)}
-  .indice li a.ativo .mini{max-height:420px}
-  .indice li .mini img{max-height:380px;width:auto;max-width:100%;border-radius:3px}
-}
 
 /* Faixa de clientes */
 .clientes{padding-block:clamp(56px,8vw,100px);border-top:1px solid var(--line)}

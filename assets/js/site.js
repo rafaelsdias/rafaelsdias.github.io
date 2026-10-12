@@ -119,8 +119,7 @@
       const c = capa(p);
       const li = h(`<li><a href="projeto.html?p=${p.id}" data-k="${k}">
         <span class="n">${nn(k + 1)}</span><span class="t">${titulo(p)}</span>
-        <span class="c">${esc(CAT[p.cat])}</span><span class="y">${esc(p.ano)}</span>
-        <span class="mini"><img src="${c.mini}" alt="" loading="lazy" width="${c.w}" height="${c.h}"></span></a></li>`);
+        <span class="c">${esc(CAT[p.cat])}</span><span class="y">${esc(p.ano)}</span></a></li>`);
       ol.append(li);
     });
     // prévia flutuante no formato real da capa (sem corte)
@@ -135,11 +134,6 @@
         $('#numeral-home').textContent = nn(+a.dataset.k + 1);
       });
       a.addEventListener('mouseleave', () => previa.classList.remove('on'));
-      // toque: primeiro mostra a capa, segundo abre o projeto
-      a.addEventListener('click', e => {
-        if (matchMedia('(hover: hover) and (min-width: 761px)').matches) return;
-        if (!a.classList.contains('ativo')) { e.preventDefault(); $$('a.ativo', ol).forEach(x => x.classList.remove('ativo')); a.classList.add('ativo'); }
-      });
     });
     addEventListener('mousemove', e => {
       const x = Math.min(innerWidth - dim[0] - 24, e.clientX + 36), y = Math.min(innerHeight - dim[1] - 24, Math.max(24, e.clientY - dim[1] / 2));
