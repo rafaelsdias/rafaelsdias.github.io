@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Badauê · Desafio criativo · Rafael Dias</title>
+<!-- Página fora do portfólio: acessada só pelo link direto e não indexada por buscadores -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Desafio criativo para a Badauê: novo carrossel sobre a vitória-régia, com motion na capa.">
+<meta property="og:title" content="Badauê · Desafio criativo · Rafael Dias">
+<meta property="og:description" content="Novo carrossel sobre a vitória-régia, com motion na capa.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rafael Dias">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:image" content="https://rafaelsdias.github.io/assets/img/badaue/og.jpg?v=1">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Capa do carrossel: Como a vitória-régia virou um dos maiores símbolos da Amazônia?">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1c1c1c">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;900&display=swap">
+<link rel="stylesheet" href="assets/css/site.css">
+<style>
+/* Post de Instagram simulado: interface escura do app, lâminas 3:4 */
+.ig-sec{padding-block:clamp(40px,6vw,80px);border-top:1px solid var(--line)}
+.ig-palco{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,470px) minmax(0,1fr);gap:clamp(20px,4vw,56px);align-items:center}
+.ig-palco .lat{min-width:0}
+.ig-palco .lat.dir{text-align:right}
+@media (max-width:900px){.ig-palco{grid-template-columns:1fr}.ig-palco .lat{display:none}}
+.ig{background:#000;color:#f5f5f5;border:1px solid #262626;border-radius:8px;overflow:hidden;font-size:14px;line-height:1.4;width:100%;max-width:470px;margin-inline:auto;
+  box-shadow:0 60px 120px -50px rgba(0,0,0,.9);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+.ig-topo{display:flex;align-items:center;gap:10px;padding:10px 12px}
+.ig-topo img{width:32px;height:32px;border-radius:50%;padding:2px;background:linear-gradient(45deg,#f9ce34,#ee2a7b,#6228d7)}
+.ig-topo .user{font-weight:600}
+.ig-topo .user small{display:block;font-weight:400;font-size:12px;color:#a8a8a8}
+.ig-topo .mais{margin-left:auto;font-weight:700;letter-spacing:1px;color:#f5f5f5}
+.ig-midia{position:relative;aspect-ratio:3/4;background:#111}
+.ig-trilho{display:flex;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain;outline:none}
+.ig-trilho::-webkit-scrollbar{display:none}
+.ig-lamina{flex:0 0 100%;height:100%;scroll-snap-align:center;scroll-snap-stop:always}
+.ig-lamina img,.ig-lamina video{width:100%;height:100%;object-fit:cover;display:block;user-select:none;-webkit-user-drag:none}
+.ig-cont{position:absolute;top:12px;right:12px;background:rgba(18,18,18,.72);color:#f5f5f5;font-size:12px;font-weight:600;padding:4px 9px;border-radius:20px;font-variant-numeric:tabular-nums;pointer-events:none;transition:opacity .4s}
+.ig-seta{position:absolute;top:50%;transform:translateY(-50%);width:30px;height:30px;border-radius:50%;border:0;background:rgba(255,255,255,.82);color:#262626;cursor:pointer;display:grid;place-items:center;box-shadow:0 2px 8px rgba(0,0,0,.25);transition:opacity .2s}
+.ig-seta svg{width:14px;height:14px}
+.ig-seta.ant{left:10px}.ig-seta.prox{right:10px}
+.ig-seta[hidden]{display:none}
+.ig-seta:focus-visible{outline:2px solid #0095f6;outline-offset:2px}
+@media (hover:none){.ig-seta{display:none}}
+.ig-acoes{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:8px 12px 4px}
+.ig-acoes .ico{display:flex;gap:14px}
+.ig-acoes svg{width:24px;height:24px;stroke:#f5f5f5;fill:none;stroke-width:1.8}
+.ig-acoes .salvar{justify-self:end}
+.ig-pontos{display:flex;gap:4px}
+.ig-pontos button{width:6px;height:6px;border-radius:50%;border:0;padding:0;background:#555;cursor:pointer;transition:background .2s,transform .2s}
+.ig-pontos button[aria-current="true"]{background:#0095f6}
+.ig-legenda{padding:4px 12px 14px;margin:0}
+.ig-legenda b{font-weight:600;margin-right:6px}
+.ig-legenda span{color:#a8a8a8;display:block;margin-top:6px;font-size:12px}
+.lat .num{font-size:clamp(110px,14vw,220px);font-weight:900;line-height:.8;letter-spacing:-.06em;color:#fff;opacity:.07;mix-blend-mode:screen;font-variant-numeric:tabular-nums}
+.lat p{color:var(--muted);font-size:14px;margin:14px 0 0}
+.lat .dica{font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+.laminas{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:10px;margin-top:28px}
+@media (max-width:760px){.laminas{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.laminas button{position:relative;padding:0;border:1px solid transparent;border-radius:3px;overflow:hidden;cursor:pointer;aspect-ratio:3/4;background:var(--surface);opacity:.6;transition:opacity .25s,border-color .25s}
+.laminas button:hover,.laminas button[aria-current="true"]{opacity:1}
+.laminas button[aria-current="true"]{border-color:var(--fg)}
+.laminas img{width:100%;height:100%;object-fit:cover}
+.laminas span{position:absolute;left:6px;top:5px;font-size:11px;font-weight:600;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.6)}
+.aviso{font-size:13px;color:var(--muted);max-width:70ch;margin-top:36px}
+</style>
+</head>
+<body class="escuro" data-pagina="desafio">
+<main>
+  <section class="proj-hero">
+    <div class="luz a" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="eyebrow">Desafio criativo · Processo seletivo</div>
+      <h1 class="display entra"><span class="linha">Badauê</span><b class="linha">Vitória-régia</b></h1>
+      <p class="lead">Novo layout para um carrossel de Instagram sobre a vitória-régia, inspirado na mesma temática da publicação original, com motion aplicado na capa.</p>
+      <dl class="ficha">
+        <div><dt>Cliente</dt><dd>Badauê</dd></div>
+        <div><dt>Contexto</dt><dd>Desafio criativo da 2ª etapa do processo seletivo</dd></div>
+        <div><dt>Ano</dt><dd>2026</dd></div>
+        <div><dt>Entregas</dt><dd><ul><li>Carrossel com 7 lâminas (3:4)</li><li>Capa animada (motion)</li></ul></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="ig-sec" aria-label="Carrossel">
+    <div class="wrap">
+      <div class="ig-palco">
+        <div class="lat" aria-hidden="true"><div class="num" id="num-lat">01</div><p class="dica">Deslize para o lado →</p></div>
+
+        <article class="ig" aria-roledescription="carrossel" aria-label="Post da Badauê com 7 lâminas">
+          <header class="ig-topo">
+            <img src="assets/img/badaue/avatar.webp" alt="">
+            <span class="user">Badauê</span>
+            <span class="mais" aria-hidden="true">···</span>
+          </header>
+          <div class="ig-midia">
+            <div class="ig-trilho" id="trilho" tabindex="0" aria-label="Lâminas do carrossel. Use as setas do teclado para navegar."></div>
+            <span class="ig-cont" id="cont">1/7</span>
+            <button class="ig-seta ant" id="ant" type="button" aria-label="Lâmina anterior" hidden><svg viewBox="0 0 24 24"><path d="M15 4 7 12l8 8" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <button class="ig-seta prox" id="prox" type="button" aria-label="Próxima lâmina"><svg viewBox="0 0 24 24"><path d="m9 4 8 8-8 8" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+          <div class="ig-acoes">
+            <div class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.4 8 3.3 4.5 6.8 4.5c2 0 3.6 1.2 5.2 3.1 1.6-1.9 3.2-3.1 5.2-3.1 3.5 0 5.4 3.5 4.1 6.8-1.8 4.6-9.3 9.2-9.3 9.2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M20.5 12a8.5 8.5 0 1 1-3.4-6.8A8.4 8.4 0 0 1 20.5 12zm0 0-.3 8.2-4.6-2"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M21.5 3 10 13.6M21.5 3l-7 18-4.5-7.4L2.5 9.5z"/></svg>
+            </div>
+            <div class="ig-pontos" id="pontos" role="tablist" aria-label="Escolher lâmina"></div>
+            <div class="salvar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V3.5h14z"/></svg></div>
+          </div>
+          <p class="ig-legenda"><b>Badauê</b>Como a vitória-régia virou um dos maiores símbolos da Amazônia?<span>Enaltecendo o gingado brasileiro · www.alabadaue.com</span></p>
+        </article>
+
+        <div class="lat dir" aria-hidden="true"><p class="dica">7 lâminas · 1080 × 1440</p><p>Capa em motion, seguida de 6 lâminas estáticas.</p></div>
+      </div>
+
+      <header style="margin-top:clamp(48px,7vw,90px)"><h2 class="h2">Todas as <b>lâminas</b></h2></header>
+      <div class="laminas" id="laminas"></div>
+      <p class="aviso">Proposta desenvolvida exclusivamente para avaliação no processo seletivo da Badauê. Os textos seguem a copy fornecida no desafio.</p>
+    </div>
+  </section>
+</main>
+
+<script>
+(() => {
+  const B = 'assets/img/badaue/';
+  const laminas = [
+    { video: 'assets/video/badaue-capa.mp4', poster: B + 'a-poster.webp', mini: B + 'a-t.webp', alt: 'Capa animada: Como a vitória-régia virou um dos maiores símbolos da Amazônia?' },
+    ...['b', 'c', 'd', 'e', 'f', 'g'].map((l, k) => ({ src: B + l + '.webp', mini: B + l + '-t.webp', alt: 'Lâmina ' + (k + 2) }))
+  ];
+  const trilho = document.getElementById('trilho'), cont = document.getElementById('cont'), pontos = document.getElementById('pontos');
+  const ant = document.getElementById('ant'), prox = document.getElementById('prox'), grade = document.getElementById('laminas'), numLat = document.getElementById('num-lat');
+  let atual = 0, video;
+
+  laminas.forEach((l, k) => {
+    const d = document.createElement('div'); d.className = 'ig-lamina';
+    d.setAttribute('role', 'group'); d.setAttribute('aria-label', `${k + 1} de ${laminas.length}`);
+    if (l.video) {
+      video = document.createElement('video');
+      Object.assign(video, { src: l.video, poster: l.poster, muted: true, loop: true, playsInline: true, autoplay: true, preload: 'auto' });
+      video.setAttribute('muted', ''); video.setAttribute('playsinline', ''); video.setAttribute('aria-label', l.alt);
+      d.append(video);
+    } else {
+      const img = new Image(); img.src = l.src; img.alt = l.alt; img.width = 1080; img.height = 1440; img.decoding = 'async'; if (k > 1) img.loading = 'lazy';
+      d.append(img);
+    }
+    trilho.append(d);
+    const p = document.createElement('button'); p.type = 'button'; p.setAttribute('aria-label', 'Lâmina ' + (k + 1)); p.onclick = () => vai(k); pontos.append(p);
+    const g = document.createElement('button'); g.type = 'button'; g.setAttribute('aria-label', 'Ver lâmina ' + (k + 1));
+    g.innerHTML = `<img src="${l.mini}" alt="" loading="lazy"><span>${k + 1}</span>`;
+    g.onclick = () => { vai(k, true); trilho.closest('.ig').scrollIntoView({ behavior: 'smooth', block: 'center' }); };
+    grade.append(g);
+  });
+
+  function marca(k) {
+    atual = k;
+    cont.textContent = `${k + 1}/${laminas.length}`;
+    numLat.textContent = String(k + 1).padStart(2, '0');
+    ant.hidden = k === 0; prox.hidden = k === laminas.length - 1;
+    [...pontos.children].forEach((b, j) => b.setAttribute('aria-current', j === k));
+    [...grade.children].forEach((b, j) => b.setAttribute('aria-current', j === k));
+    // o vídeo da capa toca só quando ela está à vista
+    if (video) { if (k === 0) video.play().catch(() => {}); else video.pause(); }
+  }
+  function vai(k, instantaneo) {
+    k = Math.max(0, Math.min(laminas.length - 1, k));
+    trilho.scrollTo({ left: k * trilho.clientWidth, behavior: instantaneo ? 'auto' : 'smooth' });
+    marca(k);
+  }
+  ant.onclick = () => vai(atual - 1); prox.onclick = () => vai(atual + 1);
+  let t; trilho.addEventListener('scroll', () => { clearTimeout(t); t = setTimeout(() => marca(Math.round(trilho.scrollLeft / trilho.clientWidth)), 60); }, { passive: true });
+  trilho.addEventListener('keydown', e => { if (e.key === 'ArrowRight') { e.preventDefault(); vai(atual + 1); } if (e.key === 'ArrowLeft') { e.preventDefault(); vai(atual - 1); } });
+  addEventListener('resize', () => trilho.scrollTo({ left: atual * trilho.clientWidth }));
+  // pausa o vídeo quando o post sai da tela
+  if (video && 'IntersectionObserver' in window) new IntersectionObserver(([e]) => { if (!e.isIntersecting) video.pause(); else if (atual === 0) video.play().catch(() => {}); }).observe(trilho);
+  marca(0);
+})();
+</script>
+<script src="assets/js/imagens.js"></script>
+<script src="assets/js/projetos.js"></script>
+<script src="assets/js/site.js"></script>
+</body>
+</html>
