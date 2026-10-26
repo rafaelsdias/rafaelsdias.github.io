@@ -302,3 +302,18 @@ button{font:inherit;color:inherit}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 }
+
+/* Seletor de idioma (PT / EN) */
+.nav .idioma{display:flex;align-items:center;gap:6px;font-size:11px;letter-spacing:.14em;font-weight:500}
+.nav .idioma span[aria-current]{font-weight:700}
+.nav .idioma a{opacity:.45;transition:opacity .2s;padding-block:6px}
+.nav .idioma a:hover,.nav .idioma a:focus-visible{opacity:1}
+.nav .idioma a::after{display:none}
+.nav .idioma i{font-style:normal;opacity:.3}
+@media (max-width:640px){.nav .wrap{gap:12px}.nav ul{gap:12px}.nav .cv{padding:5px 11px}}
+/* Em telas estreitas o botão do currículo vira "CV" para o menu caber junto com o seletor de idioma */
+.nav .cv-curto{display:none}
+@media (max-width:480px){.nav .cv-longo{display:none}.nav .cv-curto{display:inline}.nav ul{gap:10px}.nav .wrap{gap:10px}}
+/* Telas muito estreitas (até 360px): o nome vira o monograma "rd", como no favicon */
+.marca-curta{display:none;font-size:18px;letter-spacing:-.04em}
+@media (max-width:360px){.marca-longa{display:none}.marca-curta{display:inline}}
