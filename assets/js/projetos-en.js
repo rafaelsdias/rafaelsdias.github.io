@@ -47,6 +47,31 @@ window.EN = {
         { titulo: 'Chapter 2 · Carousel templates', legendas: ['Carousel “How to care for your new tattoo”', 'Carousel 2'] }
       ]
     },
+    'jornal-digital': {
+      titulo: 'Digital newspaper', destaque: 'Football and politics',
+      resumo: 'Visual identity and website for a digital news outlet, with independent publishing through Blogger.',
+      cliente: 'Journalism academic project (thesis)',
+      papel: 'Visual identity, wireframe, prototyping, development and publishing guide',
+      entregas: ['Logo and visual identity', 'Wireframe and prototype', 'Responsive website (desktop and mobile)', 'Blogger integration', 'Publishing guide (17 pages)'],
+      capitulos: [
+        { titulo: 'The project', texto: [
+          'A digital newspaper dedicated to sports coverage of a specific topic, built for a journalist to publish their own reporting. I created the visual identity and logo, the wireframe, the prototype and all of the site’s code, responsive on desktop and mobile.',
+          'The site is integrated with a free publishing platform, Blogger. The journalist writes and publishes there, and the site updates itself, with no coding required.'
+        ] },
+        { titulo: 'How it works', texto: [
+          'The code interprets each post: headline, standfirst, cover, text, images, galleries, video, audio and pull quotes become the right parts of the article page, in the newspaper’s visual style.',
+          'Every article automatically gets an estimated reading time, a progress bar that follows the scroll, suggestions of other stories on the site and its own share buttons. New posts appear on their own on the home page, the article list and the search.'
+        ] },
+        { titulo: 'The website' },
+        { titulo: 'Pages', nota: 'Articles, article page and timeline' },
+        { titulo: 'Identity and prototype', nota: 'Logo and layout sketch' },
+        { titulo: 'Client autonomy', texto: [
+          'So the journalist can publish on their own, I also created a 17-page publishing guide in my own visual identity.',
+          'It explains, step by step, how to build an article in Blogger, from the cover to pull quotes, and shows how each part appears on the site. It also includes a pre-publishing checklist and fixes for the most common mistakes.'
+        ] },
+        { titulo: 'Publishing guide', nota: '17 pages · in Portuguese' }
+      ]
+    },
     'camila-rezende': {
       destaque: 'Nutrition',
       resumo: 'Concept landing page for a nutritionist, designed to drive appointment bookings via WhatsApp.',

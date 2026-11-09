@@ -67,6 +67,39 @@ window.PROJETOS = [
     ]
   },
   {
+    // Cliente pessoa física: o nome não aparece no portfólio e está desfocado em todas as imagens.
+    id: 'jornal-digital',
+    titulo: 'Jornal digital', destaque: 'Futebol e política',
+    resumo: 'Identidade visual e site de um veículo de imprensa digital, com publicação independente pelo Blogger.',
+    cat: 'web', cats: ['web', 'branding'], ano: '2026', cliente: 'Projeto acadêmico de Jornalismo (TCC)',
+    papel: 'Identidade visual, wireframe, prototipagem, desenvolvimento e manual de publicação',
+    entregas: ['Logotipo e identidade visual', 'Wireframe e protótipo', 'Site responsivo (computador e celular)', 'Integração com o Blogger', 'Manual de publicação (17 páginas)'],
+    capa: { src: 'jornal/site/desktop-hero', w: 1440, h: 900, arquivo: true },
+    tema: 'escuro',
+    capitulos: [
+      { tipo: 'texto', titulo: 'O projeto',
+        texto: [
+          'Um jornal digital dedicado à cobertura esportiva de um tema específico, criado para um jornalista publicar as próprias reportagens. Desenvolvi a identidade visual e o logotipo, o wireframe, o protótipo e todo o código do site, responsivo para computador e celular.',
+          'O site é integrado a uma plataforma gratuita de publicação, o Blogger. O jornalista escreve e publica por lá, e o portal se atualiza sozinho, sem depender de programação.'
+        ] },
+      { tipo: 'texto', titulo: 'Como funciona',
+        texto: [
+          'O código interpreta cada publicação: título, linha fina, capa, texto, imagens, galerias, vídeos, áudios e citações viram as partes certas da página da matéria, no visual do jornal.',
+          'Cada matéria ganha automaticamente tempo estimado de leitura, barra de progresso que acompanha a rolagem, sugestões de outras leituras do site e botões de compartilhamento próprios. Novas postagens aparecem sozinhas na home, na lista de matérias e na busca.'
+        ] },
+      { tipo: 'web', titulo: 'O site', link: 'https://crisecorinthians.github.io/',
+        desktop: { src: 'jornal/site/desktop-full', w: 1200, h: 1736 }, mobile: { src: 'jornal/site/mobile-full', w: 600, h: 2904 } },
+      { tipo: 'fotos', titulo: 'Páginas', pasta: 'jornal/paginas', nota: 'Matérias, matéria e linha do tempo' },
+      { tipo: 'fotos', titulo: 'Identidade e protótipo', pasta: 'jornal/processo', nota: 'Logotipo e esboço do layout' },
+      { tipo: 'texto', titulo: 'Autonomia do cliente',
+        texto: [
+          'Para o jornalista publicar sozinho, criei também um manual de publicação de 17 páginas, na minha identidade visual.',
+          'Ele explica passo a passo como montar uma matéria no Blogger, da capa às citações, e mostra como cada parte aparece no site. Inclui ainda um checklist antes de publicar e a solução dos erros mais comuns.'
+        ] },
+      { tipo: 'manual', titulo: 'Manual de publicação', pasta: 'jornal/manual', nota: '17 páginas' }
+    ]
+  },
+  {
     id: 'camila-rezende',
     titulo: 'Camila Rezende', destaque: 'Nutrição',
     resumo: 'Landing page conceitual para nutricionista, com foco em agendamento pelo WhatsApp.',

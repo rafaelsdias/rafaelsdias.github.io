@@ -36,6 +36,10 @@ processa "Thumbnails - Youtube"                          youtube                
 processa "Fotografia - Don Marco Pizzaria"               foto/don-marco           2000 800 80
 processa "Fotografia - All In Burger"                    foto/all-in-burger       2000 800 80
 processa "Fotografia - Outros Trabalhos"                 foto/outros              2000 800 80
+# Jornal digital: capturas já com o nome do cliente desfocado (a pasta de origem guarda só as versões desfocadas)
+processa "Jornal Digital/paginas"                        jornal/paginas           1440 720 85
+processa "Jornal Digital/processo"                       jornal/processo          1600 720 88
+processa "Jornal Digital/manual"                         jornal/manual            1920 720 85
 
 # Foto do Sobre: camadas com transparência
 mkdir -p "$IMG/sobre"
